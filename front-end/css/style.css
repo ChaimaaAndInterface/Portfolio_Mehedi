@@ -1,0 +1,79 @@
+/* GENERAL CSS STYLING (THE FOUNDATION)
+1. Define Color Palette using CSS Variables
+*/
+
+:root {
+    --color-primary: #3B82F6; 
+    --color-light-bg: #f7fafc; 
+    --color-light-text: #2d3748; 
+    --color-dark-bg: #1a202c; 
+    --color-dark-text: #e2e8f0; 
+}
+
+/* general body styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: var(--color-light-bg);
+    color: var(--color-light-text);
+    transition: background-color 0.3s, color 0.3s;
+
+}
+
+/* Container for centering Content */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* styling header with css  
+
+goals; 
+1. give the header a background color and some padding 
+2. position the logo to the far left and the navigation links to the far right. 
+3. style the navigation links to look clean and modern. 
+4. make the header 'sticky' so it stays at the top of the page when the user scrolls. 
+*/
+
+header {
+    background-color: var(--color-light-bg);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-light-text);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}

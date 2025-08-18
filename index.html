@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Personal Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom scrollbar for a more modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #2d3748;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #718096;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script>
+        // Tailwind dark mode configuration
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3B82F6', // Blue 500
+                        'primary-hover': '#2563EB', // Blue 600
+                        'dark-bg': '#1a202c',
+                        'dark-card': '#2d3748',
+                        'dark-text': '#e2e8f0',
+                        'light-bg': '#f7fafc',
+                        'light-card': '#ffffff',
+                        'light-text': '#2d3748',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text transition-colors duration-300">
+
+    <!-- Header & Navigation -->
+    <header class="bg-light-card/80 dark:bg-dark-card/80 backdrop-blur-sm sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary">JD</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="hover:text-primary transition-colors">Home</a>
+                <a href="#services" class="hover:text-primary transition-colors">Services</a>
+                <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                <a href="#blog" class="hover:text-primary transition-colors">Blog</a>
+                <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-hover transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                    <svg id="theme-icon-light" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="theme-icon-dark" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                <button class="md:hidden ml-4" id="mobile-menu-button">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#home" class="block hover:text-primary transition-colors">Home</a>
+            <a href="#services" class="block hover:text-primary transition-colors">Services</a>
+            <a href="#projects" class="block hover:text-primary transition-colors">Projects</a>
+            <a href="#blog" class="block hover:text-primary transition-colors">Blog</a>
+            <a href="#contact" class="block bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-hover transition-colors text-center">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- Home/Hero Section -->
+        <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left">
+            <div class="md:w-1/2">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm John Doe</h1>
+                <p class="text-xl md:text-2xl text-primary mb-6">Full-Stack Developer & AI Enthusiast</p>
+                <p class="mb-8 max-w-xl mx-auto md:mx-0">I build beautiful, responsive, and robust web applications. With a future focus on AI and Cyber Security, I'm passionate about creating secure and intelligent digital experiences.</p>
+                <a href="#projects" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-primary-hover transition-colors text-lg">View My Work</a>
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+                <img src="https://placehold.co/400x400/3B82F6/FFFFFF?text=JD" alt="John Doe Portrait" class="rounded-full shadow-2xl w-64 h-64 md:w-96 md:h-96 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/cccccc/ffffff?text=Image+Not+Found';">
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-12">What I Offer</h2>
+            <div id="services-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service cards will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Project Showcase Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+            <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project cards will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Blog Post Section -->
+        <section id="blog" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-12">Recent Blog Posts</h2>
+            <div id="blog-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog cards will be injected here by JavaScript -->
+            </div>
+             <div class="text-center mt-12">
+                <a href="#" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-primary-hover transition-colors">View All Posts</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-light-card dark:bg-dark-card py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+            <p class="mb-8 max-w-2xl mx-auto">I'm currently available for freelance work and open to new opportunities. Feel free to reach out!</p>
+            <a href="mailto:hello@johndoe.com" class="bg-primary text-white px-8 py-4 rounded-md hover:bg-primary-hover transition-colors text-lg inline-block">hello@johndoe.com</a>
+            <div class="flex justify-center space-x-6 mt-10">
+                <a href="#" class="hover:text-primary"><i data-lucide="github"></i></a>
+                <a href="#" class="hover:text-primary"><i data-lucide="linkedin"></i></a>
+                <a href="#" class="hover:text-primary"><i data-lucide="twitter"></i></a>
+            </div>
+            <p class="mt-10 text-sm text-gray-500 dark:text-gray-400">&copy; 2025 John Doe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div id="chat-widget-container" class="fixed bottom-5 right-5">
+        <button id="chat-toggle" class="bg-primary text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-primary-hover transition-transform transform hover:scale-110">
+            <svg id="chat-icon-open" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            <svg id="chat-icon-close" class="w-8 h-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 bg-light-card dark:bg-dark-card rounded-lg shadow-2xl flex flex-col" style="height: 400px;">
+            <div class="p-4 bg-primary text-white rounded-t-lg">
+                <h3 class="font-bold">Live Chat</h3>
+                <p class="text-sm">How can I help you today?</p>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto">
+                <div class="mb-2 text-sm">
+                    <span class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg inline-block">Hi there! Ask me anything.</span>
+                </div>
+            </div>
+            <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+                <form id="chat-form" class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Type a message..." class="flex-1 p-2 border rounded-md bg-gray-100 dark:bg-gray-700 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button type="submit" class="bg-primary text-white p-2 rounded-md hover:bg-primary-hover"><i data-lucide="send"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Mock Data ---
+            const servicesData = [
+                {
+                    icon: 'code-xml',
+                    title: 'Web Development',
+                    description: 'Creating responsive and performant websites using modern technologies like HTML5, CSS3, and JavaScript.'
+                },
+                {
+                    icon: 'smartphone',
+                    title: 'Responsive Design',
+                    description: 'Ensuring your website looks and functions perfectly on all devices, from desktops to mobile phones.'
+                },
+                {
+                    icon: 'shield-check',
+                    title: 'Cyber Security',
+                    description: 'Implementing security best practices to protect your web applications from common vulnerabilities.'
+                },
+                {
+                    icon: 'brain-circuit',
+                    title: 'AI Integration',
+                    description: 'Exploring and implementing AI-powered features to create smarter, more interactive applications.'
+                },
+                {
+                    icon: 'database',
+                    title: 'Database Management',
+                    description: 'Designing and managing efficient database schemas for your applications with SQL and NoSQL solutions.'
+                },
+                {
+                    icon: 'figma',
+                    title: 'UI/UX Design',
+                    description: 'Crafting intuitive and user-friendly interfaces that provide an excellent user experience.'
+                }
+            ];
+
+            const projectsData = [
+                {
+                    image: 'https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+One',
+                    title: 'E-commerce Platform',
+                    description: 'A full-featured e-commerce site with product listings, a shopping cart, and a secure checkout process.',
+                    tags: ['HTML', 'CSS', 'JavaScript']
+                },
+                {
+                    image: 'https://placehold.co/600x400/10B981/FFFFFF?text=Project+Two',
+                    title: 'Task Management App',
+                    description: 'A productivity app to help users organize tasks, set deadlines, and track their progress.',
+                    tags: ['JavaScript', 'API', 'UI/UX']
+                },
+                {
+                    image: 'https://placehold.co/600x400/F59E0B/FFFFFF?text=Project+Three',
+                    title: 'AI Chatbot',
+                    description: 'An intelligent chatbot integrated into a customer service portal to answer user queries in real-time.',
+                    tags: ['AI', 'JavaScript', 'API']
+                }
+            ];
+
+            const blogData = [
+                {
+                    image: 'https://placehold.co/600x400/6366F1/FFFFFF?text=Blog+One',
+                    title: 'The Rise of AI in Web Development',
+                    date: 'August 12, 2025',
+                    excerpt: 'Exploring how artificial intelligence is changing the landscape of web development, from automated coding to...'
+                },
+                {
+                    image: 'https://placehold.co/600x400/EC4899/FFFFFF?text=Blog+Two',
+                    title: 'A Guide to Modern CSS',
+                    date: 'July 28, 2025',
+                    excerpt: 'A deep dive into modern CSS features like Flexbox, Grid, and custom properties that can level up your styling game.'
+                },
+                {
+                    image: 'https://placehold.co/600x400/8B5CF6/FFFFFF?text=Blog+Three',
+                    title: 'Top 5 Security Tips for Developers',
+                    date: 'July 15, 2025',
+                    excerpt: 'Essential security practices every web developer should know to build safer, more reliable applications.'
+                }
+            ];
+
+            // --- Dynamic Content Injection ---
+            
+            // Services
+            const servicesContainer = document.getElementById('services-container');
+            servicesData.forEach(service => {
+                const card = document.createElement('div');
+                card.className = 'bg-light-card dark:bg-dark-card p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300';
+                card.innerHTML = `
+                    <div class="bg-primary/10 inline-flex p-4 rounded-full mb-4">
+                        <i data-lucide="${service.icon}" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">${service.title}</h3>
+                    <p class="text-gray-600 dark:text-gray-400">${service.description}</p>
+                `;
+                servicesContainer.appendChild(card);
+            });
+
+            // Projects
+            const projectsContainer = document.getElementById('projects-container');
+            projectsData.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'bg-light-card dark:bg-dark-card rounded-lg shadow-lg overflow-hidden group';
+                card.innerHTML = `
+                    <div class="relative">
+                        <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-md">View Project</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">${project.title}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">${project.description}</p>
+                        <div class="flex flex-wrap gap-2">
+                            ${project.tags.map(tag => `<span class="bg-primary/10 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+                projectsContainer.appendChild(card);
+            });
+
+            // Blog
+            const blogContainer = document.getElementById('blog-container');
+            blogData.forEach(post => {
+                const card = document.createElement('div');
+                card.className = 'bg-light-card dark:bg-dark-card rounded-lg shadow-lg overflow-hidden group';
+                card.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover group-hover:opacity-80 transition-opacity duration-300" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">${post.date}</p>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">${post.title}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">${post.excerpt}</p>
+                        <a href="#" class="font-semibold text-primary hover:underline">Read More &rarr;</a>
+                    </div>
+                `;
+                blogContainer.appendChild(card);
+            });
+
+            // --- Theme Toggler ---
+            const themeToggle = document.getElementById('theme-toggle');
+            const lightIcon = document.getElementById('theme-icon-light');
+            const darkIcon = document.getElementById('theme-icon-dark');
+
+            // Check for saved theme in localStorage
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                darkIcon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                lightIcon.classList.remove('hidden');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                // Toggle theme
+                document.documentElement.classList.toggle('dark');
+                
+                // Update icon visibility
+                lightIcon.classList.toggle('hidden');
+                darkIcon.classList.toggle('hidden');
+
+                // Save theme preference
+                if (document.documentElement.classList.contains('dark')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+
+            // --- Mobile Menu ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // --- Live Chat Widget ---
+            const chatToggle = document.getElementById('chat-toggle');
+            const chatWindow = document.getElementById('chat-window');
+            const chatIconOpen = document.getElementById('chat-icon-open');
+            const chatIconClose = document.getElementById('chat-icon-close');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            const chatMessages = document.getElementById('chat-messages');
+
+            chatToggle.addEventListener('click', () => {
+                chatWindow.classList.toggle('hidden');
+                chatIconOpen.classList.toggle('hidden');
+                chatIconClose.classList.toggle('hidden');
+            });
+
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const message = chatInput.value.trim();
+                if (message) {
+                    // Add user message
+                    const userMessage = document.createElement('div');
+                    userMessage.className = 'mb-2 text-sm text-right';
+                    userMessage.innerHTML = `<span class="bg-primary text-white p-2 rounded-lg inline-block">${message}</span>`;
+                    chatMessages.appendChild(userMessage);
+
+                    chatInput.value = '';
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                    // Simulate bot response
+                    setTimeout(() => {
+                        const botMessage = document.createElement('div');
+                        botMessage.className = 'mb-2 text-sm';
+                        botMessage.innerHTML = `<span class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg inline-block">Thanks for your message! I'll get back to you soon.</span>`;
+                        chatMessages.appendChild(botMessage);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }, 1000);
+                }
+            });
+            
+            // Initialize Lucide Icons
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

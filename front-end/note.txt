@@ -1,0 +1,3 @@
+08/18/2025
+1. the general html structure (the skeleton)
+2. general css styling (the foundation)
