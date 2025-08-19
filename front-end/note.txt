@@ -1,3 +1,91 @@
-08/18/2025
-1. the general html structure (the skeleton)
-2. general css styling (the foundation)
+#services {
+    padding: 64px 0; /* Adds vertical padding to the section */
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center; /* Centers the title */
+    margin-bottom: 48px; /* Adds space below the title */
+}
+
+.services-grid {
+    display: grid;
+    /* On small screens, creates 1 column that takes up the full width (1fr).
+       On screens wider than 640px, creates 2 columns.
+       On screens wider than 1024px, creates 3 columns.
+    */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px; /* Space between the cards */
+}
+
+.service-card {
+    background-color: #ffffff; /* Use a fixed color for light mode card */
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.service-card:hover {
+    transform: translateY(-8px); /* Lifts the card on hover */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    /* background-color: red; */
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--color-primary);
+    text-align: center;
+    width: 100%;
+}
+
+.service-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* --- Responsive Grid Adjustments --- */
+
+/* For tablets and larger */
+@media (min-width: 640px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For desktops and larger */
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.service-button {
+    display: inline-block;
+    align-self: center; /* This will center the button */
+    margin-top: 24px;
+    padding: 8px 18px; /* Reduced padding */
+    font-size: 15px; /* Slightly smaller font */
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.service-button:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}

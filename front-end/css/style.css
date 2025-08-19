@@ -27,14 +27,7 @@ body {
     padding: 0 24px;
 }
 
-/* styling header with css  
-
-goals; 
-1. give the header a background color and some padding 
-2. position the logo to the far left and the navigation links to the far right. 
-3. style the navigation links to look clean and modern. 
-4. make the header 'sticky' so it stays at the top of the page when the user scrolls. 
-*/
+/* styling header with css*/
 
 header {
     background-color: var(--color-light-bg);
@@ -76,4 +69,178 @@ nav a {
 
 nav a:hover {
     color: var(--color-primary);
+}
+
+/* STYLING THE HOME / HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    min-height: 80vh;
+    padding: 48px 0;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero-content .subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: 24px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid var(--color-primary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* 6. Services Section Styles */
+#services {
+    padding: 64px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    background-color: #fff;
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--color-primary);
+    text-align: center;
+    width: 100%;
+}
+
+.service-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+@media(min-width: 640px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.service-button {
+    display: inline-block;
+    align-self: center;
+    margin-top: 24px;
+    padding: 8px 18px;
+    font-size: 15px;
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary); 
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.service-button:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 8. General Responsive Styles for Mobile */
+@media (max-width: 768px) {
+
+    /* --- Hero Section on Mobile --- */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding: 64px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 36px; 
+    }
+
+    .hero-image {
+        margin-top: 32px; 
+    }
+
+    .hero-image img {
+        max-width: 250px; 
+    }
+    
+    nav ul {
+        display: none; 
+    }
+    
 }
