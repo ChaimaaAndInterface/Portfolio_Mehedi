@@ -441,3 +441,40 @@ nav a:hover {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* Footer / Contact Section Styles */
+#contact {
+    background-color: #fff;
+    padding: 64px 0;
+    text-align: center;
+}
+
+.footer-text {
+    max-width: 600px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+}
+
+.social-links {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.social-links a {
+    color: var(--color-dark-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--color-dark-bg)0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-primary);
+}
+
+.copyright {
+    margin-top: 48px;
+    font-size: 14px;
+    color: #64748b;
+}
